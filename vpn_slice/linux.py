@@ -25,7 +25,7 @@ class ProcfsProvider(PosixProcessProvider):
 
 class Iproute2Provider(RouteProvider):
     def __init__(self):
-        self.iproute = get_executable('/sbin/ip')
+        self.iproute = get_executable('ip')
 
     def _iproute(self, *args, **kwargs):
         cl = [self.iproute]
@@ -83,7 +83,7 @@ class Iproute2Provider(RouteProvider):
 
 class IptablesProvider(FirewallProvider):
     def __init__(self):
-        self.iptables = get_executable('/sbin/iptables')
+        self.iptables = get_executable('iptables')
 
     def _iptables(self, *args):
         cl = [self.iptables]
